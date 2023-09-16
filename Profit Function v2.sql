@@ -36,7 +36,7 @@ BEGIN
         VALUES (item, ABS(pounds), SYSDATE);
         
         -- Display a message for items that made a loss
-        DBMS_OUTPUT.PUT_LINE('This ' || item || ' did not make any profit. It made a loss of £' || TO_CHAR(ABS(pounds), '9990.99'));
+        DBMS_OUTPUT.PUT_LINE('The ' || item || ' did not make any profit. It made a loss of £' || TO_CHAR(ABS(pounds), '9990.99'));
     ELSE
         -- Log the profit into the profit_log table
         INSERT INTO profit_log(item_name, profit_amount, transaction_date)
